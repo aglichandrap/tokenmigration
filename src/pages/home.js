@@ -181,14 +181,14 @@ export default function HomePage() {
             <Title>Swaping</Title>
             <CardStyled>
               <CardBody>
-                <Subtitle>MARS ➡️ CATROZ</Subtitle>
+                <Subtitle>MARS ➡️ Mashida</Subtitle>
                 <Text>{amount} of MARS</Text>
               </CardBody>
             </CardStyled>
             <ButtonSwap type='ghost' onClick={migrate} loading={loading}>Confirm</ButtonSwap>
           </div>
         </Modal>
-        <Title>Migrate your Mars to Catroz</Title>
+        <Title>Migrate your Mars to Mashida</Title>
         <CardStyled>
           <CardBody>
             <Form layout="vertical" color="white">
@@ -200,10 +200,10 @@ export default function HomePage() {
           </CardBody>
         </CardStyled>
         <br/>
-        <Subtitle>What is Catroz ?</Subtitle>
-        <p>Catroz is Governance Token that embodies DeFi Decentralized Governance and a Decentralized Application </p>
-        <p>designed to assist token holders in voting on key issues, proposing or deciding on new features</p>
-        <p>so that democratic decissions can be adopted by majority vote to ensure robust project development</p>
+        <Subtitle>What is Mashida ?</Subtitle>
+        <p>Mashida is a Crypto Token and a Web3 Platform that contains a Virtual world and Social and Game application features that are interconnected, and people can interact virtually, work, play, and meet based on activity and interaction. </p>
+        <p>It can transact peer to peer, application owners and users are referred to as the Mashida Army, with NFT as profile identities and assets on the platform, which can be used, sold, bought, and transferred to other use cases.</p>
+        <p>Mashida is a BEP20 token that operates on the BNB Smart Chain network.</p>
       </Container>
     </Home>
   );
