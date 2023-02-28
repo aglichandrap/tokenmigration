@@ -18,7 +18,7 @@ export default function HomePage() {
   const [modalConfirm, setModalConfirm] = useState(false);
   const [balance, setBalance] = useState('');
   const [allowance, setAllowance] = useState('');
-  const SwapContractAddress = "0x8feaf27268F52cfc40A2220e74B8B8e29Ae09dFd"; //swapcontract
+  const SwapContractAddress = "0xBF53c749D75a7A45aF634401E5a08B72a1C50A08"; //swapcontract
   const SwapContractABI = swapContract;
 
   let signer;
@@ -77,7 +77,7 @@ export default function HomePage() {
       ];
       //Old ERC20 Contract: 0x288d3A87a87C284Ed685E0490E5C4cC0883a060a 
       let TokenContract = new ethers.Contract(
-        "0x2E46bf098Fb08244b4159e4c95D4edc407033a36", //old token contract
+        "0xFDe2d90409b8C934593E4aFb934Cd9F21A5F4B1E", //old token contract
         abi,
         signer
       );
@@ -181,14 +181,14 @@ export default function HomePage() {
             <Title>Swaping</Title>
             <CardStyled>
               <CardBody>
-                <Subtitle>MARS ➡️ Mashida</Subtitle>
+                <Subtitle>MARS ➡️ USDT</Subtitle>
                 <Text>{amount} of MARS</Text>
               </CardBody>
             </CardStyled>
             <ButtonSwap type='ghost' onClick={migrate} loading={loading}>Confirm</ButtonSwap>
           </div>
         </Modal>
-        <Title>Migrate your Mars to Mashida</Title>
+        <Title>Migrate your Mars to USDT</Title>
         <CardStyled>
           <CardBody>
             <Form layout="vertical" color="white">
