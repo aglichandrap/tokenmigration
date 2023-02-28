@@ -18,7 +18,7 @@ export default function HomePage() {
   const [modalConfirm, setModalConfirm] = useState(false);
   const [balance, setBalance] = useState('');
   const [allowance, setAllowance] = useState('');
-  const SwapContractAddress = "0xBF53c749D75a7A45aF634401E5a08B72a1C50A08"; //swapcontract
+  const SwapContractAddress = "0xD5C7B84261aac554433B6152B0C6F4430D299a3a"; //swapcontract
   const SwapContractABI = swapContract;
 
   let signer;
