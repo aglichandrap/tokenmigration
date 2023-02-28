@@ -200,10 +200,12 @@ export default function HomePage() {
           </CardBody>
         </CardStyled>
         <br/>
-        <Subtitle>What is Mashida ?</Subtitle>
-        <p>Mashida is a Crypto Token and a Web3 Platform that contains a Virtual world and Social and Game application features that are interconnected, and people can interact virtually, work, play, and meet based on activity and interaction. </p>
-        <p>It can transact peer to peer, application owners and users are referred to as the Mashida Army, with NFT as profile identities and assets on the platform, which can be used, sold, bought, and transferred to other use cases.</p>
-        <p>Mashida is a BEP20 token that operates on the BNB Smart Chain network.</p>
+        <Subtitle>What is Marsupilamii ?</Subtitle>
+        <p>Marsupilamii is a cryptocurrency based in Indonesia with diverse users and several subprojects. </p>
+          <p>Marsupilamii was developed to make cryptocurrency more accessible to everyone. 
+            <p>With its subprojects, dating & live streaming apps, Marsupilamii tries to gain users among men and women through human needs. </p>
+            <p>Human needs to get social, have a partner, and gain a friend. Data from Business of Apps shows over 323 million people worldwide are using dating apps. Tinder and Bumble were the most download apps in 2021. About 20 million users are paying for premium features. </p>
+          Dating apps are one of the must-have apps for the young generation to fulfill their needs. It is the main reason Marsupilamii jumped to this trend. It will help Marsupilamii to gain a wider audience and penetrates better in the crypto market. It helps us to reach control over our money and eliminate centralized finance models.</p>
       </Container>
     </Home>
   );
