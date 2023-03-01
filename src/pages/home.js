@@ -147,6 +147,11 @@ export default function HomePage() {
     }
   }
 
+  function setMax(){
+    <InputStyled value={balance} onClick={(e) => setAmount(e.target.value)} />
+
+  }
+
   function handleSwap() {
     if(!amount) return message.error("Input the amount!!");
     if(!balance) return message.error("Please check your balance!!");
@@ -193,7 +198,8 @@ export default function HomePage() {
           <CardBody>
             <Form layout="vertical" color="white">
               <FormItem label='Amount'>
-                <InputStyled placeholder="0.00" addonAfter={`Max: ${balance}`} value={amount} onChange={(e) => setAmount(e.target.value)} />
+              <InputStyled placeholder="0.00" addonAfter= {`Max: ${balance}`} value={amount} onChange={(e) => setAmount(e.target.value)} />
+              <ButtonSwap type='ghost' onClick={() => setAmount(balance)}>Max</ButtonSwap>
               </FormItem>
             </Form>
             <ButtonSwap type='ghost' onClick={handleSwap} loading={loading}>Refund</ButtonSwap>
