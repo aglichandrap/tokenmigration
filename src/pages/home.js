@@ -13,6 +13,7 @@ export default function HomePage() {
     padding: '20px'
   }
   const [loading, setLoading] = useState(false);
+  const [connectedWallet, setConnectedWallet] = useState(null);
   const [amount, setAmount] = useState('');
   const [modal, setModal] = useState(false);
   const [modalConfirm, setModalConfirm] = useState(false);
@@ -20,21 +21,31 @@ export default function HomePage() {
   const [allowance, setAllowance] = useState('');
   const SwapContractAddress = "0x73Ac2D0900a2846851D501D4fA155e81731e56FC"; //swapcontract
   const SwapContractABI = swapContract;
+  
 
   let signer;
-  if(window.ethereum) {
-    window.ethereum.on('chainChanged', (_chainId) => window.location.reload());
-    window.ethereum.on('accountsChanged', (accounts) => window.location.reload());
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+  const connectWallet = async () => {
+    setLoading(true);
+    
+    try {
+      await provider.send('eth_requestAccounts', []);
+      const accounts = await provider.listAccounts();
+      getBepTokenBalance(accounts[0]);
+    } catch (error) {
+      console.error(error);
+      message.error("Failed to connect wallet. Please try again.");
+    }
+    setConnectedWallet('0x73Ac2D0900a2846851D501D4fA155e81731e56FC');
+    setLoading(false);
   }
+;
 
   async function Validate() {
     if(window.ethereum) {
-      await window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-        getBepTokenBalance(accounts[0]);
-      });
       await window.ethereum.request({ method: 'eth_chainId' }).then(chainId => {
         if(chainId !== '0x38') setModal(true); //change chain id
-     //if(chainId !== '56') setModal(false);
       })
     } else {
       message.error("Metamask not detected!!")
@@ -55,8 +66,6 @@ export default function HomePage() {
   }
 
   try {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-
     provider.listAccounts()
     .then(function(accounts) {
       signer = provider.getSigner(accounts[0]);
@@ -87,6 +96,7 @@ export default function HomePage() {
         ethers.utils.parseUnits(Math.pow(10, 18).toString(), 18)
       )
       console.log("Approving Old Mars contract to spend");
+
 
       setLoading(true);
       async function PendingApprove() {
@@ -147,10 +157,7 @@ export default function HomePage() {
     }
   }
 
-  function setMax(){
-    <InputStyled value={balance} onClick={(e) => setAmount(e.target.value)} />
 
-  }
 
   function handleSwap() {
     if(!amount) return message.error("Input the amount!!");
@@ -196,7 +203,13 @@ export default function HomePage() {
         <Title>Refund your Mars to USDT</Title>
         <CardStyled>
           <CardBody>
-            <Form layout="vertical" color="white">
+          {connectedWallet ? (
+        <div>Refund Contract Address: {connectedWallet}</div>
+      ) : (
+        <ButtonSwap type='ghost' onClick={connectWallet} loading={loading}>
+          Connect Wallet
+        </ButtonSwap>
+      )}            <Form layout="vertical" color="white">
               <FormItem label='Amount'>
               <InputStyled placeholder="0.00" addonAfter= {`Max: ${balance}`} value={amount} onChange={(e) => setAmount(e.target.value)} />
               <ButtonSwap type='ghost' onClick={() => setAmount(balance)}>Max</ButtonSwap>
