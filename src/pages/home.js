@@ -200,12 +200,14 @@ export default function HomePage() {
           </CardBody>
         </CardStyled>
         <br/>
-        <Subtitle>What is Marsupilamii ?</Subtitle>
-        <p>Marsupilamii is a cryptocurrency based in Indonesia with diverse users and several subprojects. </p>
-          <p>Marsupilamii was developed to make cryptocurrency more accessible to everyone. 
-            <p>With its subprojects, dating & live streaming apps, Marsupilamii tries to gain users among men and women through human needs. </p>
-            <p>Human needs to get social, have a partner, and gain a friend. Data from Business of Apps shows over 323 million people worldwide are using dating apps. Tinder and Bumble were the most download apps in 2021. About 20 million users are paying for premium features. </p>
-          Dating apps are one of the must-have apps for the young generation to fulfill their needs. It is the main reason Marsupilamii jumped to this trend. It will help Marsupilamii to gain a wider audience and penetrates better in the crypto market. It helps us to reach control over our money and eliminate centralized finance models.</p>
+        <Subtitle>Marsupilamii Token Refund</Subtitle>
+            <p>As promised, we will distribute MARSUPILAMII tokens in USDT to all of you in order to continue MARSUPILAMII's vision and mission of achieving larger global goals.</p>
+            <p>We will run a refund for 14 days, with the refund ending on March 14th. We are currently accepting refund requests, and all requests will be processed within 48 hours of confirmation for staking holders.</p>
+            <p>We will refund your funds at the rate of Rp. 10 (0.00066 USDT) per 1 MARS. Holders who have MARSUPILAMII in their wallet can connect a wallet through this site and immediately do a swap (don't forget to prepare a little BNB for the gas fee) and holders who are staking, the funds you sent for staking for the first time will also be returned at a rate of Rp. 10 or 0.00066 USDT per 1 MARS, then you can make a withdrawal request on the https://staking.marsupilamiitoken.com as usual. </p>
+            <p>Illustration :</p>
+            <p>Normal Holders A has 1,000,000 MARS in his wallet and would like to swap. The calculation is 1,000,000 MARS x IDR 10 = 10,000,000/0.00066 USDT = 660 USDT. A will then receive 660 USDT.</p>
+            <p>Staking Holder B has staked 1,000,000 MARS and wishes to withdraw. The calculation is 1,000,000 MARS x IDR 10 = 10,000,000/0.00066 USDT = 660 USDT.B will then receive 660 USDT.</p>
+            <p>We apologize for the inconvenience and hope to work with you again at a later date. Thank you for your time.</p>
       </Container>
     </Home>
   );
