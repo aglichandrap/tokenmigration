@@ -33,8 +33,8 @@ export default function HomePage() {
         getBepTokenBalance(accounts[0]);
       });
       await window.ethereum.request({ method: 'eth_chainId' }).then(chainId => {
-     //   if(chainId !== '0x38') setModal(true); //change chain id
-     if(chainId !== '56') setModal(true);
+        if(chainId !== '0x38') setModal(true); //change chain id
+     //if(chainId !== '56') setModal(false);
       })
     } else {
       message.error("Metamask not detected!!")
