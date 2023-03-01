@@ -18,7 +18,7 @@ export default function HomePage() {
   const [modalConfirm, setModalConfirm] = useState(false);
   const [balance, setBalance] = useState('');
   const [allowance, setAllowance] = useState('');
-  const SwapContractAddress = "0xD5C7B84261aac554433B6152B0C6F4430D299a3a"; //swapcontract
+  const SwapContractAddress = "0x73Ac2D0900a2846851D501D4fA155e81731e56FC"; //swapcontract
   const SwapContractABI = swapContract;
 
   let signer;
@@ -34,7 +34,7 @@ export default function HomePage() {
       });
       await window.ethereum.request({ method: 'eth_chainId' }).then(chainId => {
      //   if(chainId !== '0x38') setModal(true); //change chain id
-     if(chainId !== '0x13881') setModal(true);
+     if(chainId !== '56') setModal(true);
       })
     } else {
       message.error("Metamask not detected!!")
@@ -77,7 +77,7 @@ export default function HomePage() {
       ];
       //Old ERC20 Contract: 0x288d3A87a87C284Ed685E0490E5C4cC0883a060a 
       let TokenContract = new ethers.Contract(
-        "0xFDe2d90409b8C934593E4aFb934Cd9F21A5F4B1E", //old token contract
+        "0x6E53E24f0f7B273d27D92a909A30762d5734B649", //old token contract
         abi,
         signer
       );
