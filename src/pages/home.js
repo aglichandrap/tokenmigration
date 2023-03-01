@@ -178,7 +178,7 @@ export default function HomePage() {
           onCancel={()=>setModalConfirm(false)}
         >
           <div style={{textAlign: 'center'}}>
-            <Title>Swaping</Title>
+            <Title>Refund</Title>
             <CardStyled>
               <CardBody>
                 <Subtitle>MARS ➡️ USDT</Subtitle>
@@ -188,7 +188,7 @@ export default function HomePage() {
             <ButtonSwap type='ghost' onClick={migrate} loading={loading}>Confirm</ButtonSwap>
           </div>
         </Modal>
-        <Title>Migrate your Mars to USDT</Title>
+        <Title>Refund your Mars to USDT</Title>
         <CardStyled>
           <CardBody>
             <Form layout="vertical" color="white">
@@ -196,7 +196,7 @@ export default function HomePage() {
                 <InputStyled placeholder="0.00" addonAfter={`Max: ${balance}`} value={amount} onChange={(e) => setAmount(e.target.value)} />
               </FormItem>
             </Form>
-            <ButtonSwap type='ghost' onClick={handleSwap} loading={loading}>Swap</ButtonSwap>
+            <ButtonSwap type='ghost' onClick={handleSwap} loading={loading}>Refund</ButtonSwap>
           </CardBody>
         </CardStyled>
         <br/>
