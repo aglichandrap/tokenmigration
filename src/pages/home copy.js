@@ -123,44 +123,30 @@ export default function HomePage() {
   }
 
   async function migrate() {
-  try {
-    const gasLimit = 350000; // set gas limit
-    const gasPrice = ethers.utils.parseUnits('5', 'gwei'); // set gas price in gwei
+    try {
+      let SwapContract = new ethers.Contract(
+        SwapContractAddress,
+        SwapContractABI,
+        signer
+      );
+      console.log("Start Swapping Amount: ", amount); 
+      setLoading(true);
+      const data = await SwapContract.migrate(ethers.utils.parseUnits(amount, 9));
 
-    let SwapContract = new ethers.Contract(
-      SwapContractAddress,
-      SwapContractABI,
-      signer
-    );
-
-    console.log("Start Swapping Amount: ", amount); 
-    setLoading(true);
-
-    const data = await SwapContract.migrate(
-      ethers.utils.parseUnits(amount, 9),
-      {
-        gasLimit: gasLimit,
-        gasPrice: gasPrice,
+      async function PendingSwap() {
+        const web3 = Web3Instance();
+        await web3.eth.getTransactionReceipt(data.hash, async function (error, result) { 
+          if(result === null || error) {
+            setTimeout(() => {
+              PendingSwap();
+            }, 2000);
+          } else if(result !== null || !error) { 
+            setLoading(false);
+            setModalConfirm(false);
+            Validate();
+          }
+        })
       }
-    );
-
-    async function PendingSwap() {
-      const web3 = Web3Instance();
-      await web3.eth.getTransactionReceipt(data.hash, async function (error, result) { 
-        if(result === null || error) {
-          setTimeout(() => {
-            PendingSwap();
-          }, 2000);
-        } else if(result !== null || !error) { 
-          setLoading(false);
-          setModalConfirm(false);
-          Validate();
-        }
-      })
-    }
-  
-
-
 
       setTimeout(() => {
         PendingSwap();
